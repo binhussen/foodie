@@ -9,7 +9,6 @@ const renderOnPage = (meal) => {
     </div>
     <span class="likes">5 likes</span>
     <button class="comment-btn">Comments</button>
-    <button class="reservation-btn">Reservations</button>
     <div class="comment-pop-up">
     </div>
   </div>`;

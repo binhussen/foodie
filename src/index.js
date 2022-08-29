@@ -1,1 +1,2 @@
 /** @format */
+import './styles.css';

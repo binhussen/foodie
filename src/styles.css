@@ -1,3 +1,5 @@
+/** @format */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 
 html {
   font-size: calc(15px + 0.390625vw);
+
   /* font-family: 'Cookie', cursive; */
   font-family: 'Dosis', sans-serif;
 }
@@ -49,4 +52,9 @@ nav {
 .nav-links li:nth-of-type(1) a {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.footer {
+  border: 1px solid #000;
+  padding: 10px 15px;
 }

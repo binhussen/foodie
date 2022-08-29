@@ -2,9 +2,11 @@
 import './styles.css';
 import loadDataFromAPI from './modules/loadDataFromApi.js';
 import updateLikes from './modules/updateLikes.js';
+import countMeals from './modules/countMeals.js';
 
-window.onload = () => {
-  loadDataFromAPI();
+window.onload = async () => {
+  await loadDataFromAPI();
+  countMeals();
 };
 
 document.addEventListener('click', (e) => {

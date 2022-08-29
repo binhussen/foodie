@@ -3,8 +3,8 @@
 import { getComment, getMealDetail } from './operation.js';
 
 const displayPopup = async (meal) => {
-	const mealDetail = await getMealDetail(meal.idMeal);
-	let html = `<i class="fa-solid fa-x close-btn"></i>
+  const mealDetail = await getMealDetail(meal.idMeal);
+  let html = `<i class="fa-solid fa-x close-btn"></i>
   <div class="item-img">
     <img src="${mealDetail.strMealThumb}" alt="">
   </div>
@@ -18,14 +18,14 @@ const displayPopup = async (meal) => {
     </div>
     `;
 
-	const comments = await getComment(52928);
-	comments.forEach((comment_) => {
-		html += `<div class="comments">
+  const comments = await getComment(52928);
+  comments.forEach((comment_) => {
+    html += `<div class="comments">
       <span class="comment-date">${comment_.creation_date}</span>
       <span class="comment-descritpion">${comment_.username}: ${comment_.comment}</span>
     </div>`;
-	});
-	html += `<div class="comment-form">
+  });
+  html += `<div class="comment-form">
       <div class="comment-heading">
         Add a comment
       </div>
@@ -35,9 +35,14 @@ const displayPopup = async (meal) => {
     </div>
   </div>`;
 
-	const popUp = document.querySelector('.comment-pop-up');
-	popUp.innerHTML = html;
-	popUp.classList.add('show-pop-up');
+  const popUp = document.querySelector('.comment-pop-up');
+  popUp.innerHTML = html;
+  popUp.classList.add('show-pop-up');
+
+  const closeBtn = document.querySelector('.close-btn');
+  closeBtn.addEventListener('click', () => {
+    popUp.classList.remove('show-pop-up');
+  });
 };
 
 export default displayPopup;

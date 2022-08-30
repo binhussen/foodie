@@ -1,6 +1,6 @@
 /** @format */
 
-import displayPopup from './displayPoup.js';
+import displayPopup from './displayPopup.js';
 
 const renderOnPage = (meal) => {
   const html = `<div class="card"  data-id = "${meal.idMeal}">

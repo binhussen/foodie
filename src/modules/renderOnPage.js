@@ -3,7 +3,7 @@
 import displayPopup from './displayPopup.js';
 
 const renderOnPage = (meal, likesObj) => {
-	const html = `<div class="card"  data-id = "${meal.idMeal}">
+  const html = `<div class="card"  data-id = "${meal.idMeal}">
     <div class="img-container">
         <img src="${meal.strMealThumb}" alt="">
     </div>
@@ -16,16 +16,16 @@ const renderOnPage = (meal, likesObj) => {
     <div class="comment-pop-up">
     </div>
   </div>`;
-	const cardContainer = document.querySelector('.cards-container');
-	cardContainer.innerHTML += html;
+  const cardContainer = document.querySelector('.cards-container');
+  cardContainer.innerHTML += html;
 
-	const commentbtn = document.querySelectorAll('.comment-btn');
-	commentbtn.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			const targetID = btn.getAttribute('id');
-			displayPopup(targetID);
-		});
-	});
+  const commentbtn = document.querySelectorAll('.comment-btn');
+  commentbtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetID = btn.getAttribute('id');
+      displayPopup(targetID);
+    });
+  });
 };
 
 export default renderOnPage;

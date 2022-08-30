@@ -143,6 +143,11 @@ nav {
   border-radius: 50px;
 }
 
+.comment-container button {
+  width: auto;
+  padding: 8px 10px;
+}
+
 .card button:hover,
 .card button:focus {
   border-color: rgb(251, 146, 0.15);
@@ -237,16 +242,11 @@ nav {
 textarea {
   padding: 7px 10px;
   margin-bottom: 10px;
-  background-color:  hsl(35, 100%, 95%);
+  background-color: hsl(35, 100%, 95%);
   border: none;
   transition: 0.2s ease-in;
   outline: none;
   border-radius: 10px 10px 0 10px;
-}
-
-.comment-container button {
-  width: auto;
-  padding: 8px 10px;
 }
 
 .footer {

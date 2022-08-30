@@ -1,7 +1,9 @@
-const involvmentApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/sAxQtNP5nzOV9l3P6DO3/likes/';
+/** @format */
+
+import { INVOLVEMENT_URL } from './config.js';
 
 const createLike = async (mealID) => {
-  await fetch(involvmentApiUrl, {
+  await fetch(`${INVOLVEMENT_URL}/likes/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

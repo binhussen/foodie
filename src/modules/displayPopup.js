@@ -1,5 +1,5 @@
 /** @format */
-import { getMealDetail, getComment } from './operation.js';
+import { getMealDetail, getComment, addComment } from './operation.js';
 
 const displayPopup = async (mealID) => {
 	const mealDetail = await getMealDetail(mealID);
@@ -43,6 +43,13 @@ const displayPopup = async (mealID) => {
 	const closeBtn = document.querySelector('.close-btn');
 	closeBtn.addEventListener('click', () => {
 		popUp.classList.remove('show-pop-up');
+	});
+
+	const commenterName = document.querySelector('.commenter-name');
+	const commentText = document.querySelector('.comment');
+	const commentBtn = document.querySelector('.add-comment-btn');
+	commentBtn.addEventListener('click', () => {
+		addComment(commenterName.value, commentText.value, mealID);
 	});
 };
 

@@ -16,17 +16,20 @@ const displayPopup = async (mealID) => {
     <div class="comment-heading">
       Comments <span class="comments-amount">(${comments.length ?? 0})</span>
     </div>
+    <div class="comment-list">
     `;
   if (comments.length > 0) {
     comments.forEach((comment) => {
       html += `<div class="comments">
       <span class="comment-date">${comment.creation_date}</span>
       <span class="comment-descritpion">${comment.username}: ${comment.comment}</span>
-    </div>`;
+    </div>
+    `;
     });
   }
 
-  html += `<div class="comment-form">
+  html += `</div>
+  <div class="comment-form">
       <div class="comment-heading">
         Add a comment
       </div>
@@ -48,9 +51,15 @@ const displayPopup = async (mealID) => {
   const commenterName = document.querySelector('.commenter-name');
   const commentText = document.querySelector('.comment');
   const commentBtn = document.querySelector('.add-comment-btn');
+  const commentlist = document.querySelector('.comment-list');
   commentBtn.addEventListener('click', () => {
-    addComment(commenterName.value, commentText.value, mealID);
-    displayPopup(mealID);
+    addComment(commenterName.value, commentText.value, mealID).then(() => {
+      commentlist.innerHTML += `<div class="comments"><span class="comment-date">${new Date()
+        .toISOString()
+        .slice(0, 10)}</span><span class="comment-descritpion">${
+        commenterName.value
+      }: ${commentText.value}</span></div>`;
+    });
   });
 };
 

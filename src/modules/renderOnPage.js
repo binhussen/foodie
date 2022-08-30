@@ -3,7 +3,7 @@
 import displayPopup from './displayPopup.js';
 
 const renderOnPage = (meal) => {
-	const html = `<div class="card"  data-id = "${meal.idMeal}">
+  const html = `<div class="card"  data-id = "${meal.idMeal}">
     <div class="img-container">
         <img src="${meal.strMealThumb}" alt="">
     </div>
@@ -16,15 +16,15 @@ const renderOnPage = (meal) => {
     <div class="comment-pop-up">
     </div>
   </div>`;
-	const cardContainer = document.querySelector('.cards-container');
-	cardContainer.innerHTML += html;
+  const cardContainer = document.querySelector('.cards-container');
+  cardContainer.innerHTML += html;
 
-	const commentbtn = document.querySelectorAll('.comment-btn');
-	commentbtn.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			displayPopup(meal);
-		});
-	});
+  const commentbtn = document.querySelectorAll('.comment-btn');
+  commentbtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      displayPopup(meal);
+    });
+  });
 };
 
 export default renderOnPage;

@@ -12,7 +12,7 @@ const renderOnPage = (meal, likesObj) => {
       <i class="fa-regular fa-heart like-btn"></i>
     </div>
     <span class="likes">${likesObj.likes}  likes</span>
-    <button class="comment-btn">Comments</button>
+    <button class="comment-btn" id="${meal.idMeal}">Comments</button>
     <div class="comment-pop-up">
     </div>
   </div>`;
@@ -22,7 +22,8 @@ const renderOnPage = (meal, likesObj) => {
   const commentbtn = document.querySelectorAll('.comment-btn');
   commentbtn.forEach((btn) => {
     btn.addEventListener('click', () => {
-      displayPopup(meal);
+      const targetID = btn.getAttribute('id');
+      displayPopup(targetID);
     });
   });
 };

@@ -2,7 +2,7 @@
 
 import displayPopup from './displayPopup.js';
 
-const renderOnPage = (meal) => {
+const renderOnPage = (meal, likesObj) => {
   const html = `<div class="card"  data-id = "${meal.idMeal}">
     <div class="img-container">
         <img src="${meal.strMealThumb}" alt="">
@@ -11,8 +11,8 @@ const renderOnPage = (meal) => {
       <div class="name">${meal.strMeal}</div>
       <i class="fa-regular fa-heart like-btn"></i>
     </div>
-    <span class="likes">5 likes</span>
-    <button class="comment-btn" >Comments</button>
+    <span class="likes">${likesObj.likes}  likes</span>
+    <button class="comment-btn">Comments</button>
     <div class="comment-pop-up">
     </div>
   </div>`;

@@ -1,3 +1,7 @@
+/** @format */
+
+import displayPopup from './displayPoup.js';
+
 const renderOnPage = (meal) => {
   const html = `<div class="card"  data-id = "${meal.idMeal}">
     <div class="img-container">
@@ -8,12 +12,19 @@ const renderOnPage = (meal) => {
       <i class="fa-regular fa-heart like-btn"></i>
     </div>
     <span class="likes">5 likes</span>
-    <button class="comment-btn">Comments</button>
+    <button class="comment-btn" >Comments</button>
     <div class="comment-pop-up">
     </div>
   </div>`;
   const cardContainer = document.querySelector('.cards-container');
   cardContainer.innerHTML += html;
+
+  const commentbtn = document.querySelectorAll('.comment-btn');
+  commentbtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      displayPopup(meal);
+    });
+  });
 };
 
 export default renderOnPage;

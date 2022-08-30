@@ -1,3 +1,7 @@
+/** @format */
+
+import displayPopup from './displayPopup.js';
+
 const renderOnPage = (meal, likesObj) => {
   const html = `<div class="card"  data-id = "${meal.idMeal}">
     <div class="img-container">
@@ -14,6 +18,13 @@ const renderOnPage = (meal, likesObj) => {
   </div>`;
   const cardContainer = document.querySelector('.cards-container');
   cardContainer.innerHTML += html;
+
+  const commentbtn = document.querySelectorAll('.comment-btn');
+  commentbtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      displayPopup(meal);
+    });
+  });
 };
 
 export default renderOnPage;

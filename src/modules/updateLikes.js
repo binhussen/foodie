@@ -4,7 +4,7 @@ import getLikes from './getLikes.js';
 const updateLikes = async (index) => {
   const likesAmount = document.querySelectorAll('.likes')[index];
   const heartIcon = document.querySelectorAll('.fa-heart')[index];
-  heartIcon.classList = 'fa-solid fa-heart like-btn';
+  heartIcon.classList = 'fa-solid fa-heart like-btn pressed';
   setTimeout(() => {
     heartIcon.classList = 'fa-regular fa-heart like-btn';
   }, 120);

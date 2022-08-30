@@ -30,3 +30,8 @@ export const addComment = async (name, comment, id) => {
     }),
   });
 };
+
+export const CountComment = async (mealId) => {
+  const comments = await getComment(mealId);
+  return comments.length ?? 0;
+};

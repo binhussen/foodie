@@ -1,5 +1,10 @@
 /** @format */
-import { getMealDetail, getComment, addComment } from './operation.js';
+import {
+  getMealDetail,
+  getComment,
+  addComment,
+  CountComment,
+} from './operation.js';
 
 const displayPopup = async (mealID) => {
   const mealDetail = await getMealDetail(mealID);
@@ -14,7 +19,9 @@ const displayPopup = async (mealID) => {
   </div>
     <div class="comment-container">
     <div class="comment-heading">
-      Comments <span class="comments-amount">(${comments.length ?? 0})</span>
+      Comments <span class="comments-amount">(${await CountComment(
+    mealID,
+  )})</span>
     </div>
     <div class="comment-list">
     `;

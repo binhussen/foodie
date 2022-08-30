@@ -107,6 +107,11 @@ nav {
 
 .card .like-btn {
   cursor: pointer;
+  color: #000;
+}
+
+.card .pressed {
+  color: #f00;
 }
 
 .card .like-container {

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import countMeals from './countMeals.js'
+import countMeals from './countMeals.js';
 
 test('properly counts the meals and renders the amount on page ', () => {
   document.body.innerHTML = `
@@ -15,4 +15,4 @@ test('properly counts the meals and renders the amount on page ', () => {
   countMeals();
   const amount = document.querySelector('.item-amount').textContent;
   expect(amount).toBe('(4)');
-})
+});

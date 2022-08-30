@@ -223,8 +223,9 @@ nav {
 }
 
 .pop-up-description {
-  width: 90%;
+  width: 80%;
   margin: 10px auto;
+  line-height: 1.6;
 }
 
 .comment-container {
@@ -260,4 +261,23 @@ textarea {
   padding: 10px 15px;
   margin-top: 50px;
   text-align: center;
+}
+
+@media screen and (max-width: 766px) {
+  .pop-up-description {
+    width: 90%;
+  }
+
+  .comment-form {
+    width: 100%;
+  }
+
+  .comment-pop-up .close-btn {
+    top: 20px;
+    right: 20px;
+  }
+
+  .comment-pop-up .item-img {
+    margin-top: 30px;
+  }
 }

@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-> Comming soon...
+> Live Version [here](https://binhussen.github.io/capstone-js/)
 
   
 

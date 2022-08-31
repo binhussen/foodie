@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-> Live Version [here](https://binhussen.github.io/capstone-js/)
+> Live Version [here](https://binhussen.github.io/foodie/)
 
   
 
@@ -62,7 +62,7 @@ After installing NodeJS please follow the next steps...
 -- To clone this project use:
 ```bash
 
-git clone https://github.com/AbelG101/To-Do-List-App.git
+git clone https://github.com/binhussen/foodie.git
 
 ```
 -- for installing dev dependecies use:

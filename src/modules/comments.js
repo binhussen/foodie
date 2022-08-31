@@ -1,14 +1,8 @@
 /** @format */
 
-import { BASEAPI_URL, INVOLVEMENT_URL } from './config.js';
+import { INVOLVEMENT_URL } from './config.js';
 
-export const getMealDetail = async (mealID) => {
-  const response = await fetch(`${BASEAPI_URL}/lookup.php?i=${mealID}`);
-  const mealDetail = (await response.json()).meals[0];
-  return mealDetail;
-};
-
-export const getComment = async (mealID) => {
+export const getComments = async (mealID) => {
   const commentsResponse = await fetch(
     `${INVOLVEMENT_URL}/comments?item_id=${mealID}`,
   );
@@ -31,7 +25,7 @@ export const addComment = async (name, comment, id) => {
   });
 };
 
-export const countComment = async () => {
+export const countComments = async () => {
   const amount = document.querySelector('.comments-amount');
   const comments = document.querySelectorAll('.comments');
   amount.textContent = `(${comments.length ?? 0})`;

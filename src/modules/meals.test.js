@@ -1,8 +1,9 @@
 /**
+ * @format
  * @jest-environment jsdom
  */
 
-import countMeals from './countMeals.js';
+import { countMeals } from './meals.js';
 
 test('properly counts the meals and renders the amount on page ', () => {
   document.body.innerHTML = `

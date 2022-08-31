@@ -1,14 +1,12 @@
 /** @format */
-import {
-  getMealDetail,
-  getComment,
-  addComment,
-  countComment,
-} from './operation.js';
 
-const displayPopup = async (mealID) => {
-  const mealDetail = await getMealDetail(mealID);
-  const comments = await getComment(mealID);
+import { addComment, countComments, getComments } from './comments.js';
+import { getLikes } from './likes.js';
+import { getMealDetails, getMeals } from './meals.js';
+
+export const displayPopup = async (mealID) => {
+  const mealDetail = await getMealDetails(mealID);
+  const comments = await getComments(mealID);
   let html = `<i class="fa-solid fa-x close-btn"></i>
   <div class="item-img">
     <img src="${mealDetail.strMealThumb}" alt="">
@@ -64,9 +62,41 @@ const displayPopup = async (mealID) => {
         commenterName.value
       }: ${commentText.value}</span></div>`;
 
-      countComment();
+      countComments();
     });
   });
 };
 
-export default displayPopup;
+export const renderOnPage = (meal, likesObj) => {
+  const html = `<div class="card"  data-id = "${meal.idMeal}">
+    <div class="img-container">
+        <img src="${meal.strMealThumb}" alt="">
+    </div>
+    <div class="content">
+      <div class="name">${meal.strMeal}</div>
+      <i class="fa-regular fa-heart like-btn"></i>
+    </div>
+    <span class="like-container"><span class="likes">${likesObj.likes}</span> likes</span>
+    <button class="comment-btn" id="${meal.idMeal}">Recipe</button>
+    <div class="comment-pop-up">
+    </div>
+  </div>`;
+  const cardContainer = document.querySelector('.cards-container');
+  cardContainer.innerHTML += html;
+
+  const commentbtn = document.querySelectorAll('.comment-btn');
+  commentbtn.forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const targetID = btn.getAttribute('id');
+      displayPopup(targetID).then(() => countComments());
+    });
+  });
+};
+
+export const loadDataFromAPI = async () => {
+  const meals = await getMeals();
+  const likes = await getLikes();
+  meals.forEach((meal, index) => {
+    renderOnPage(meal, likes[index]);
+  });
+};

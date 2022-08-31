@@ -28,6 +28,7 @@ a {
 header.header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: 1px solid hsl(35, 100%, 98%);
   background-color: #ffecd1;
   border-radius: 0 0 10px 15px;
@@ -267,6 +268,10 @@ textarea {
 }
 
 @media screen and (max-width: 766px) {
+  header.header {
+    width: 100%;
+  }
+
   .pop-up-description {
     width: 90%;
   }
@@ -285,8 +290,8 @@ textarea {
   }
 
   .logo-container {
-    width: 64px;
-    height: 16px;
+    width: 100px;
+    height: 25px;
     background: url(../images/logo.svg) center no-repeat;
   }
 
@@ -311,6 +316,9 @@ textarea {
 
   .nav-links.active {
     display: flex;
+    align-items: center;
+    padding-top: 50px;
+    width: 100%;
     left: 0;
     background: #eebaa8;
   }
@@ -323,7 +331,6 @@ textarea {
     font-weight: 700;
     line-height: 44px;
     color: #fff5e1;
-    border-bottom: 1px solid #6f6c6b;
     padding: 1rem;
     margin: 0 1.5rem;
   }

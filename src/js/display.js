@@ -1,12 +1,14 @@
 /** @format */
 
-import { addComment, countComments, getComments } from './comments.js';
+import Comment from './comments.js';
 import { getLikes } from './likes.js';
 import { getMealDetails, getMeals } from './meals.js';
 
+const comment = new Comment();
+
 export const displayPopup = async (mealID) => {
   const mealDetail = await getMealDetails(mealID);
-  const comments = await getComments(mealID);
+  const comments = await comment.getComments(mealID);
   let html = `<i class="fa-solid fa-x close-btn"></i>
   <div class="item-img">
     <img src="${mealDetail.strMealThumb}" alt="">
@@ -55,15 +57,17 @@ export const displayPopup = async (mealID) => {
   const commentBtn = document.querySelector('.add-comment-btn');
   const commentlist = document.querySelector('.comment-list');
   commentBtn.addEventListener('click', () => {
-    addComment(commenterName.value, commentText.value, mealID).then(() => {
-      commentlist.innerHTML += `<div class="comments"><span class="comment-date">${new Date()
-        .toISOString()
-        .slice(0, 10)}</span><span class="comment-descritpion">${
-        commenterName.value
-      }: ${commentText.value}</span></div>`;
+    comment
+      .addComment(commenterName.value, commentText.value, mealID)
+      .then(() => {
+        commentlist.innerHTML += `<div class="comments"><span class="comment-date">${new Date()
+          .toISOString()
+          .slice(0, 10)}</span><span class="comment-descritpion">${
+          commenterName.value
+        }: ${commentText.value}</span></div>`;
 
-      countComments();
-    });
+        comment.countComments();
+      });
   });
 };
 
@@ -88,7 +92,7 @@ export const displayCards = (meal, likesObj) => {
   commentbtn.forEach((btn) => {
     btn.addEventListener('click', async () => {
       const targetID = btn.getAttribute('id');
-      displayPopup(targetID).then(() => countComments());
+      displayPopup(targetID).then(() => comment.countComments());
     });
   });
 };

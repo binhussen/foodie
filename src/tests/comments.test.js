@@ -3,7 +3,7 @@
  * @jest-environment jsdom
  */
 
-import { countComments } from '../js/comments.js';
+import Comment from '../js/comments.js';
 
 test('Count and Display Number of Comments', () => {
   document.body.innerHTML = `
@@ -11,7 +11,8 @@ test('Count and Display Number of Comments', () => {
     <div class="comments"></div>
     <div class="comments"></div>
     <div class="comments"></div>`;
-  countComments();
+  const comment = new Comment();
+  comment.countComments();
   const amount = document.querySelector('.comments-amount').textContent;
   expect(amount).toBe('(3)');
 });

@@ -1,6 +1,7 @@
 /** @format */
 
 import displayPopup from './displayPopup.js';
+import { countComment } from './operation.js';
 
 const renderOnPage = (meal, likesObj) => {
   const html = `<div class="card"  data-id = "${meal.idMeal}">
@@ -21,9 +22,9 @@ const renderOnPage = (meal, likesObj) => {
 
   const commentbtn = document.querySelectorAll('.comment-btn');
   commentbtn.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       const targetID = btn.getAttribute('id');
-      displayPopup(targetID);
+      displayPopup(targetID).then(() => countComment());
     });
   });
 };

@@ -35,7 +35,7 @@ header.header {
 	margin-bottom: 24px;
 }
 
-.nav {
+.nav-links {
 	display: flex;
 	justify-content: flex-start;
 	padding: 0 15px;
@@ -297,8 +297,41 @@ textarea {
 		background: url(../images/logo.svg) center no-repeat;
 	}
 
-	.nav {
+	.logo-container.active {
+		visibility: hidden;
+		transition: 0s;
+	}
+
+	.nav-links {
 		display: none;
+		position: fixed;
+		justify-content: flex-start;
+		align-items: flex-start;
+		margin-left: 0;
+		flex-direction: column;
+		top: 0;
+		width: 90%;
+		height: 100%;
+		transition: 0.5s ease-in-out;
+		z-index: 1;
+	}
+
+	.nav-links.active {
+		display: flex;
+		left: 0;
+		background: #eebaa8;
+	}
+
+	.nav-item {
+		padding: 0.625rem 0.75rem;
+	}
+	.nav-links.active .nav-item {
+		font-weight: 700;
+		line-height: 44px;
+		color: #fff5e1;
+		border-bottom: 1px solid #6f6c6b;
+		padding: 1rem;
+		margin: 0 1.5rem;
 	}
 
 	.hamburger {

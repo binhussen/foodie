@@ -12,15 +12,8 @@ window.onload = async () => {
 	await loadDataFromAPI();
 	meal.countMeals();
 };
-const openMenu = () => {
-	const hamburger = document.querySelector('.hamburger');
-	hamburger.classList.toggle('active');
-};
 
 document.addEventListener('click', (e) => {
-	if (e.target.matches('.hamburger')) {
-		openMenu();
-	}
 	if (!e.target.matches('.like-btn')) {
 		return;
 	}
@@ -32,4 +25,14 @@ document.addEventListener('click', (e) => {
 			}
 		});
 	}
+});
+
+const humberger = document.querySelector('.hamburger');
+humberger.addEventListener('click', () => {
+	const hamburger = document.querySelector('.hamburger');
+	const nav = document.querySelector('.nav-links');
+	const logo = document.querySelector('.logo-container');
+	hamburger.classList.toggle('active');
+	nav.classList.toggle('active');
+	logo.classList.toggle('active');
 });

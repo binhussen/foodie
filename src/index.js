@@ -2,14 +2,15 @@
 
 import './styles.css';
 import { loadDataFromAPI } from './js/display.js';
-import { countMeals } from './js/meals.js';
-import Like from './js/likes';
+import Like from './js/likes.js';
+import Meal from './js/meals.js';
 
 const like = new Like();
+const meal = new Meal();
 
 window.onload = async () => {
   await loadDataFromAPI();
-  countMeals();
+  meal.countMeals();
 };
 
 document.addEventListener('click', (e) => {

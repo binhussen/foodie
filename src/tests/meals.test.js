@@ -3,7 +3,7 @@
  * @jest-environment jsdom
  */
 
-import { countMeals } from '../js/meals.js';
+import Meal from '../js/meals.js';
 
 test('properly counts the meals and renders the amount on page ', () => {
   document.body.innerHTML = `
@@ -13,7 +13,9 @@ test('properly counts the meals and renders the amount on page ', () => {
   <div class="card"></div>
   <div class="card"></div>
   `;
-  countMeals();
+
+  const meal = new Meal();
+  meal.countMeals();
   const amount = document.querySelector('.item-amount').textContent;
   expect(amount).toBe('(4)');
 });

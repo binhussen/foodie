@@ -2,13 +2,14 @@
 
 import Comment from './comments.js';
 import Like from './likes.js';
-import { getMealDetails, getMeals } from './meals.js';
+import Meal from './meals.js';
 
 const comment = new Comment();
 const like = new Like();
+const meal = new Meal();
 
 export const displayPopup = async (mealID) => {
-  const mealDetail = await getMealDetails(mealID);
+  const mealDetail = await meal.getMealDetails(mealID);
   const comments = await comment.getComments(mealID);
   let html = `<i class="fa-solid fa-x close-btn"></i>
   <div class="item-img">
@@ -99,7 +100,7 @@ export const displayCards = (meal, likesObj) => {
 };
 
 export const loadDataFromAPI = async () => {
-  const meals = await getMeals();
+  const meals = await meal.getMeals();
   const likes = await like.getLikes();
   meals.forEach((meal, index) => {
     displayCards(meal, likes[index]);

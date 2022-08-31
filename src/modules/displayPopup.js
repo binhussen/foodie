@@ -19,7 +19,7 @@ const displayPopup = async (mealID) => {
   </div>
     <div class="comment-container">
     <div class="comment-heading">
-      Comments <span class="comments-amount">(${countComment()})</span>
+      Comments <span class="comments-amount"></span>
     </div>
     <div class="comment-list">
     `;
@@ -32,7 +32,6 @@ const displayPopup = async (mealID) => {
     `;
 		});
 	}
-
 	html += `</div>
   <div class="comment-form">
       <div class="comment-heading">
@@ -64,6 +63,8 @@ const displayPopup = async (mealID) => {
 				.slice(0, 10)}</span><span class="comment-descritpion">${
 				commenterName.value
 			}: ${commentText.value}</span></div>`;
+
+			countComment();
 		});
 	});
 };

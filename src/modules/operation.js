@@ -31,7 +31,8 @@ export const addComment = async (name, comment, id) => {
 	});
 };
 
-export const countComment = () => {
+export const countComment = async () => {
+	const amount = document.querySelector('.comments-amount');
 	const comments = document.querySelectorAll('.comments');
-	return comments.length ?? 0;
+	amount.textContent = `(${comments.length ?? 0})`;
 };

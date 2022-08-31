@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1661928717213" clover="3.2.0">
+  <project timestamp="1661928717214" name="All files">
+    <metrics statements="25" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="2" elements="33" coveredelements="17" complexity="0" loc="25" ncloc="25" packages="1" files="3" classes="3"/>
+    <file name="comments.js" path="C:\Users\mhdbi\Documents\Projects\Microverse\module 2\capstone-js\src\modules\comments.js">
+      <metrics statements="11" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="1"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="31" count="1" type="cond" truecount="1" falsecount="1"/>
+    </file>
+    <file name="config.js" path="C:\Users\mhdbi\Documents\Projects\Microverse\module 2\capstone-js\src\modules\config.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
+    </file>
+    <file name="meals.js" path="C:\Users\mhdbi\Documents\Projects\Microverse\module 2\capstone-js\src\modules\meals.js">
+      <metrics statements="12" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>

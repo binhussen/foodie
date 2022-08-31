@@ -11,8 +11,8 @@ const renderOnPage = (meal, likesObj) => {
       <div class="name">${meal.strMeal}</div>
       <i class="fa-regular fa-heart like-btn"></i>
     </div>
-    <span class="likes">${likesObj.likes}  likes</span>
-    <button class="comment-btn" id="${meal.idMeal}">Comments</button>
+    <span class="like-container"><span class="likes">${likesObj.likes}</span> likes</span>
+    <button class="comment-btn" id="${meal.idMeal}">Recipe</button>
     <div class="comment-pop-up">
     </div>
   </div>`;

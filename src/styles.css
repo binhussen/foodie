@@ -13,6 +13,10 @@ html {
   font-family: 'Dosis', sans-serif;
 }
 
+body {
+  background-image: url(../images/body-bg.svg);
+}
+
 ul {
   list-style: none;
 }
@@ -24,9 +28,17 @@ a {
 nav {
   display: flex;
   justify-content: flex-start;
-  border: 1px solid #000;
+  border: 1px solid hsl(35, 100%, 98%);
   padding: 10px 15px;
   margin-bottom: 50px;
+  background-color: #ffecd1;
+  border-radius: 0 0 10px 15px;
+}
+
+.logo-container {
+  width: 150px;
+  height: auto;
+  background: url(../images/logo.svg) center no-repeat;
 }
 
 .container {
@@ -80,6 +92,7 @@ nav {
 .card {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
 }
 
 .card .content {
@@ -88,11 +101,20 @@ nav {
   padding: 10px 15px;
 }
 
-.card .like-btn {
-  cursor: pointer;
+.card .name {
+  color: hsl(35, 100%, 47%);
 }
 
-.card .likes {
+.card .like-btn {
+  cursor: pointer;
+  color: #000;
+}
+
+.card .pressed {
+  color: #f00;
+}
+
+.card .like-container {
   width: auto;
   align-self: flex-end;
   font-size: 0.7rem;
@@ -100,14 +122,57 @@ nav {
 }
 
 .card button {
-  width: 80%;
-  margin: 20px auto;
-  padding: 8px 14px;
+  align-items: center;
+  background-color: rgb(251, 146, 0.5);
+  border: 1px solid rgb(251, 146, 0.1);
+  box-shadow: rgb(251, 146, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
   cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  min-height: 3rem;
+  padding: calc(0.575rem - 1px) calc(1.1rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 40%;
+  margin: 20px auto;
+  border-radius: 50px;
+}
+
+.comment-container button {
+  width: auto;
+  padding: 8px 10px;
+}
+
+.card button:hover,
+.card button:focus {
+  border-color: rgb(251, 146, 0.15);
+  box-shadow: rgb(251, 146, 0.1) 0 2px 10px;
+}
+
+.card button:hover {
+  transform: translateY(-1px);
+}
+
+.card button:active {
+  background-color: hsl(35, 99%, 47%);
+  border-color: rgb(251, 146, 0.15);
+  box-shadow: rgb(251, 146, 0.06) 0 2px 4px;
+  color: rgba(255, 255, 255, 0.65);
+  transform: translateY(0);
 }
 
 .comment-pop-up {
-  border: 2px solid #000;
+  border-radius: 10px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -117,7 +182,10 @@ nav {
   overflow-y: scroll;
   display: none;
   padding: 2rem 0;
-  background-color: aliceblue;
+  background-color: #ffecd1;
+  color: hsl(0, 0%, 10%);
+  z-index: 100;
+  background-image: url(../images/popUp-bg.svg);
 }
 
 .show-pop-up {
@@ -137,12 +205,17 @@ nav {
   border-radius: 10px;
 }
 
+.comment-pop-up .add-comment-btn {
+  width: 50%;
+}
+
 .comment-pop-up .close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 1.3rem;
   font-weight: bold;
+  color: hsl(35, 100%, 35%);
 }
 
 .pop-up-heading {
@@ -150,8 +223,9 @@ nav {
 }
 
 .pop-up-description {
-  width: 90%;
+  width: 80%;
   margin: 10px auto;
+  line-height: 1.6;
 }
 
 .comment-container {
@@ -174,15 +248,36 @@ nav {
 textarea {
   padding: 7px 10px;
   margin-bottom: 10px;
-}
-
-.comment-container button {
-  width: auto;
-  padding: 8px 10px;
+  background-color: hsl(35, 100%, 95%);
+  border: none;
+  transition: 0.2s ease-in;
+  outline: none;
+  border-radius: 10px 10px 0 10px;
 }
 
 .footer {
-  border: 1px solid #000;
+  background-color: #ffecd1;
+  border-radius: 15px 15px 0 0;
   padding: 10px 15px;
   margin-top: 50px;
+  text-align: center;
+}
+
+@media screen and (max-width: 766px) {
+  .pop-up-description {
+    width: 90%;
+  }
+
+  .comment-form {
+    width: 100%;
+  }
+
+  .comment-pop-up .close-btn {
+    top: 20px;
+    right: 20px;
+  }
+
+  .comment-pop-up .item-img {
+    margin-top: 30px;
+  }
 }

@@ -2,8 +2,10 @@
 
 import './styles.css';
 import { loadDataFromAPI } from './js/display.js';
-import { updateLikes } from './js/likes.js';
 import { countMeals } from './js/meals.js';
+import Like from './js/likes';
+
+const like = new Like();
 
 window.onload = async () => {
   await loadDataFromAPI();
@@ -18,7 +20,7 @@ document.addEventListener('click', (e) => {
     const likeBtns = document.querySelectorAll('.like-btn');
     likeBtns.forEach((btn, index) => {
       if (e.target === btn) {
-        updateLikes(index);
+        like.updateLikes(index);
       }
     });
   }

@@ -1,10 +1,11 @@
 /** @format */
 
 import Comment from './comments.js';
-import { getLikes } from './likes.js';
+import Like from './likes.js';
 import { getMealDetails, getMeals } from './meals.js';
 
 const comment = new Comment();
+const like = new Like();
 
 export const displayPopup = async (mealID) => {
   const mealDetail = await getMealDetails(mealID);
@@ -99,7 +100,7 @@ export const displayCards = (meal, likesObj) => {
 
 export const loadDataFromAPI = async () => {
   const meals = await getMeals();
-  const likes = await getLikes();
+  const likes = await like.getLikes();
   meals.forEach((meal, index) => {
     displayCards(meal, likes[index]);
   });

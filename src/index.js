@@ -1,8 +1,9 @@
 /** @format */
+
 import './styles.css';
-import { updateLikes } from './modules/likes.js';
-import { countMeals } from './modules/meals.js';
-import { loadDataFromAPI } from './modules/display.js';
+import { loadDataFromAPI } from './js/display.js';
+import { updateLikes } from './js/likes.js';
+import { countMeals } from './js/meals.js';
 
 window.onload = async () => {
   await loadDataFromAPI();

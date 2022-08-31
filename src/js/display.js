@@ -67,7 +67,7 @@ export const displayPopup = async (mealID) => {
   });
 };
 
-export const renderOnPage = (meal, likesObj) => {
+export const displayCards = (meal, likesObj) => {
   const html = `<div class="card"  data-id = "${meal.idMeal}">
     <div class="img-container">
         <img src="${meal.strMealThumb}" alt="">
@@ -97,6 +97,6 @@ export const loadDataFromAPI = async () => {
   const meals = await getMeals();
   const likes = await getLikes();
   meals.forEach((meal, index) => {
-    renderOnPage(meal, likes[index]);
+    displayCards(meal, likes[index]);
   });
 };

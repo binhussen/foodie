@@ -3,7 +3,7 @@
  * @jest-environment jsdom
  */
 
-import { countComments } from './comments.js';
+import { countComments } from '../js/comments.js';
 
 test('Count and Display Number of Comments', () => {
   document.body.innerHTML = `

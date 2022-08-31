@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-  
+![poster](https://user-images.githubusercontent.com/104968236/187662059-755219ff-052f-48c3-bd4d-0163a36d3fa6.png)
 
 # Meals recipe page
 

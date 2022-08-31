@@ -48,7 +48,7 @@ header.header {
 
 .logo-container {
   width: 150px;
-  height: auto;
+  height: 35px;
   background: url(../images/logo.svg) center no-repeat;
 }
 
@@ -271,6 +271,7 @@ textarea {
   header.header {
     width: 100%;
   }
+
   .pop-up-description {
     width: 90%;
   }
@@ -363,5 +364,9 @@ textarea {
 
   .hamburger.active .bar:nth-of-type(3) {
     transform: translateY(-6.3px) rotate(-45deg);
+  }
+
+  .footer {
+    width: 100%;
   }
 }

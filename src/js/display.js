@@ -59,17 +59,18 @@ export const displayPopup = async (mealID) => {
   const commentBtn = document.querySelector('.add-comment-btn');
   const commentlist = document.querySelector('.comment-list');
   commentBtn.addEventListener('click', () => {
-    comment
-      .addComment(commenterName.value, commentText.value, mealID)
-      .then(() => {
-        commentlist.innerHTML += `<div class="comments"><span class="comment-date">${new Date()
-          .toISOString()
-          .slice(0, 10)}</span><span class="comment-descritpion">${
-          commenterName.value
-        }: ${commentText.value}</span></div>`;
-
-        comment.countComments();
-      });
+    if (commenterName.value !== '' && commentText.value !== '') {
+      comment
+        .addComment(commenterName.value, commentText.value, mealID)
+        .then(() => {
+          commentlist.innerHTML += `<div class="comments"><span class="comment-date">${new Date()
+            .toISOString()
+            .slice(0, 10)}</span><span class="comment-descritpion">${
+            commenterName.value
+          }: ${commentText.value}</span></div>`;
+          comment.countComments();
+        });
+    }
   });
 };
 

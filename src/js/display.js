@@ -35,14 +35,14 @@ export const displayPopup = async (mealID) => {
     });
   }
   html += `</div>
-  <div class="comment-form">
+  <form class="comment-form">
       <div class="comment-heading">
         Add a comment
       </div>
-      <input class="commenter-name" type="text" placeholder="Your name">
-      <textarea class="comment" name="comment" id="" cols="30" rows="10" placeholder="Your insights"></textarea>
-      <button class="add-comment-btn">Comment</button>
-    </div>
+      <input class="commenter-name" type="text" placeholder="Your name" required>
+      <textarea class="comment" name="comment" id="" cols="30" rows="10" placeholder="Your insights" required></textarea>
+      <button type="submit" class="add-comment-btn">Comment</button>
+    </form>
   </div>`;
 
   const popUp = document.querySelector('.comment-pop-up');

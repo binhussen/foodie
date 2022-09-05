@@ -35,14 +35,14 @@ export const displayPopup = async (mealID) => {
     });
   }
   html += `</div>
-  <div class="comment-form">
+  <form class="comment-form">
       <div class="comment-heading">
         Add a comment
       </div>
-      <input class="commenter-name" type="text" placeholder="Your name">
-      <textarea class="comment" name="comment" id="" cols="30" rows="10" placeholder="Your insights"></textarea>
-      <button class="add-comment-btn">Comment</button>
-    </div>
+      <input class="commenter-name" type="text" placeholder="Your name" required>
+      <textarea class="comment" name="comment" id="" cols="30" rows="10" placeholder="Your insights" required></textarea>
+      <button type="submit" class="add-comment-btn">Comment</button>
+    </form>
   </div>`;
 
   const popUp = document.querySelector('.comment-pop-up');
@@ -59,17 +59,18 @@ export const displayPopup = async (mealID) => {
   const commentBtn = document.querySelector('.add-comment-btn');
   const commentlist = document.querySelector('.comment-list');
   commentBtn.addEventListener('click', () => {
-    comment
-      .addComment(commenterName.value, commentText.value, mealID)
-      .then(() => {
-        commentlist.innerHTML += `<div class="comments"><span class="comment-date">${new Date()
-          .toISOString()
-          .slice(0, 10)}</span><span class="comment-descritpion">${
-          commenterName.value
-        }: ${commentText.value}</span></div>`;
-
-        comment.countComments();
-      });
+    if (commenterName.value !== '' && commentText.value !== '') {
+      comment
+        .addComment(commenterName.value, commentText.value, mealID)
+        .then(() => {
+          commentlist.innerHTML += `<div class="comments"><span class="comment-date">${new Date()
+            .toISOString()
+            .slice(0, 10)}</span><span class="comment-descritpion">${
+            commenterName.value
+          }: ${commentText.value}</span></div>`;
+          comment.countComments();
+        });
+    }
   });
 };
 
